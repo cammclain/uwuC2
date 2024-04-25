@@ -3,8 +3,9 @@ package controllers
 import (
 	"net/http"
 
-	"example.com/server/db"
-	"example.com/server/models"
+	"server/db"
+	"server/models"
+
 	"github.com/gin-gonic/gin"
 )
 
