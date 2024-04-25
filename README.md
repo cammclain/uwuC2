@@ -1,2 +1,15 @@
 # uwuC2
-A tiny C2 I am making because I am bored. Do not expect much.
+
+## Client
+
+Written in Go, using the bubble tea library.
+
+## Server
+
+Written in Go using Gin
+
+
+
+## Agents
+
+Lots of them.
