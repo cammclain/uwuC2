@@ -12,7 +12,25 @@ func InitDB() *sql.DB {
 		panic(err)
 	}
 
-	statement, _ := database.Prepare("CREATE TABLE IF NOT EXISTS commands (id INTEGER PRIMARY KEY, command TEXT, status TEXT)")
-	statement.Exec()
+	createCommandsTable := `CREATE TABLE IF NOT EXISTS commands (
+        id INTEGER PRIMARY KEY, 
+        command TEXT, 
+        status TEXT
+    );`
+	createUsersTable := `CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        username TEXT UNIQUE,
+        password TEXT
+    );`
+
+	_, err = database.Exec(createCommandsTable)
+	if err != nil {
+		panic(err)
+	}
+	_, err = database.Exec(createUsersTable)
+	if err != nil {
+		panic(err)
+	}
+
 	return database
 }
