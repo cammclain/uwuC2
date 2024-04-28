@@ -7,9 +7,9 @@ import (
 )
 
 func TorHttpRouter() http.Handler {
-	e := gin.New()
-	e.Use(gin.Recovery())
-	e.GET("/", func(c *gin.Context) {
+	tor_http_gin_client := gin.New()
+	tor_http_gin_client.Use(gin.Recovery())
+	tor_http_gin_client.GET("/", func(c *gin.Context) {
 		c.JSON(
 			http.StatusOK,
 			gin.H{
@@ -19,5 +19,5 @@ func TorHttpRouter() http.Handler {
 		)
 	})
 
-	return e
+	return tor_http_gin_client
 }
